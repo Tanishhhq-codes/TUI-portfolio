@@ -1,0 +1,16 @@
+[Unit]
+Description=SSH Terminal Portfolio
+After=network.target
+
+[Service]
+Type=simple
+User=portfolio
+WorkingDirectory=/opt/portfolio
+ExecStart=/opt/portfolio/portfolio
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

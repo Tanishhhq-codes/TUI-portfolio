@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  portfolio:
+    build: .
+    container_name: ssh-portfolio
+    ports:
+      - "23234:23234"
+    volumes:
+      # persist SSH host key so fingerprint stays stable across restarts
+      - ./ssh-keys:/root/.ssh
+    restart: unless-stopped
